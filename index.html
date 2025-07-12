@@ -23,7 +23,7 @@
       display: none;
       padding: 40px 20px;
       min-height: 100vh;
-      background-image: url('fivbg.png');
+      background-image: url('images/fivbg.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -132,8 +132,8 @@
 
   <!-- Page 1: Start -->
   <div id="start-page" class="page active">
-    <img src="thank-you.gif">
-    <img src="heronic-pixel.gif" alt="Sanrio GIF" style="width:200px;">
+    <img src="images/thank-you.gif">
+    <img src="images/heronic-pixel.gif" alt="Sanrio GIF" style="width:200px;">
     <h1>Welcome to Feels Land</h1>
     <button class="button" onclick="goToPage('emotion-page')">Press Me</button>
     <br><br>
@@ -142,39 +142,39 @@
 
   <!-- Page 2: Emotion Selection -->
   <div id="emotion-page" class="page">
-    <img src="8bit-16bit.gif">
+    <img src="images/8bit-16bit.gif">
     <h2>How are you feeling?</h2>
     <div class="emotions-container">
       <button class="emotion-btn" onclick="showAdvice(0)">
-        <img src="fiv.png" alt="Sleepy" class="emotion-img">
+        <img src="images/fiv.png" alt="Sleepy" class="emotion-img">
         Sleepy
       </button>
       <button class="emotion-btn" onclick="showAdvice(1)">
-        <img src="fiv2.png" alt="Sad" class="emotion-img">
+        <img src="images/fiv2.png" alt="Sad" class="emotion-img">
         Sad
       </button>
       <button class="emotion-btn" onclick="showAdvice(2)">
-        <img src="fiv8.png" alt="Tired" class="emotion-img">
+        <img src="images/fiv8.png" alt="Tired" class="emotion-img">
         Tired
       </button>
       <button class="emotion-btn" onclick="showAdvice(3)">
-        <img src="fiv3.png" alt="Happy" class="emotion-img">
+        <img src="images/fiv3.png" alt="Happy" class="emotion-img">
         Happy
       </button>
       <button class="emotion-btn" onclick="showAdvice(4)">
-        <img src="fiv7.png" alt="Angry" class="emotion-img">
+        <img src="images/fiv7.png" alt="Angry" class="emotion-img">
         Angry
       </button>
       <button class="emotion-btn" onclick="showAdvice(5)">
-        <img src="fiv5.png" alt="Excited" class="emotion-img">
+        <img src="images/fiv5.png" alt="Excited" class="emotion-img">
         Excited
       </button>
       <button class="emotion-btn" onclick="showAdvice(6)">
-        <img src="fiv6.png" alt="Scared" class="emotion-img">
+        <img src="images/fiv6.png" alt="Scared" class="emotion-img">
         Scared
       </button>
       <button class="emotion-btn" onclick="showAdvice(7)">
-        <img src="fiv4.png" alt="bored" class="emotion-img">
+        <img src="images/fiv4.png" alt="bored" class="emotion-img">
         bored
       </button>
     </div>
@@ -191,56 +191,56 @@
 
   <script>
     const emotions = [
-      ["Sleepy", "fiv11.png", [
+      ["Sleepy", "images/fiv11.png", [
         "You’ve done what you could. That’s enough for today.",
         "Try closing your eyes for a few minutes.",
         "Maybe it's time for a cozy blanket!",
         "It’s okay to pause. The world will still be there when you wake up.",
         "Go get some rest, sleepyhead."
       ]],
-      ["Sad", "fiv12.png", [
+      ["Sad", "images/fiv12.png", [
         "Talk to your loved one.",
         "It's okay to feel sad sometimes.",
         "It’ll pass when it’s ready.",
         "It'll be alright. Just let it pass.",
         "It won’t stay like this forever, even if it feels like it."
       ]],
-      ["Tired", "fiv14.png", [
+      ["Tired", "images/fiv14.png", [
         "Close your eyes for a moment — let the world dim a little.",
         "Take rest. You need it.",
         "The world can wait. You come first tonight.",
         "Nothing has to make sense right now. Just rest.",
         "Doing nothing is sometimes the most important thing."
       ]],
-      ["Happy", "fiv13.png", [
+      ["Happy", "images/fiv13.png", [
         "You don’t need a reason to be happy — being alive is reason enough.",
         "Remember this feeling. Bottle it up.",
         "you're glowing",
         "Right now, you're building memories your future self will smile at.",
         "You deserve this joy & everything else."
       ]],
-      ["Angry", "fiv17.png", [
+      ["Angry", "images/fiv17.png", [
         "It's alr, just breathe.",
         "It's okayyy bro chill!",
         "Go for a walk. It really helps to cool down.",
         "You wouldn’t feel this much if you didn’t care that deeply.",
         "It’s okay to be angry — it means something mattered to you."
       ]],
-      ["Excited", "fiv15.png", [
+      ["Excited", "images/fiv15.png", [
         "This feeling? Hold onto it. Let it fill you up.",
         "Tell someone. Excitement multiplies when it’s shared.",
         "You don’t need a reason to feel this good. Just enjoy it.",
         "Breathe in. You’re allowed to be this happy.",
         "Pause here. This is the good part."
       ]],
-      ["Scared", "fiv16.png", [
+      ["Scared", "images/fiv16.png", [
         "Picture the calm after a long day, when everything slows down.",
         "Imagine your favorite place, even if it’s made up.",
         "Close your eyes. Picture someone who makes you feel calm.",
         "Think of a time someone made you laugh.",
         "Think of a happy memory."
       ]],
-      ["bored", "fiv18.png", [
+      ["bored", "images/fiv18.png", [
         "Open your notes app and write whatever’s on your mind.",
         "Make a list of things you loved as a kid.",
         "You’re not doing anything wrong — it’s just a quiet moment.",
