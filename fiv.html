@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feels Land</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .page {
+      display: none;
+      padding: 40px 20px;
+      min-height: 100vh;
+      background-image: url('fivbg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h1, h2, p{
+      color: #ffffff;
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .button, .emotion-btn, .back-btn {
+      font-size: 1.1rem;
+      padding: 14px 24px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #c2b7f7;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .button:hover {
+      background: #7c6ee6;
+    }
+    .emotion-btn:hover, .back-btn:hover {
+      background: #c2b7f7;
+    }
+
+    .emotion-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 42%;
+      max-width: 150px;
+      height: 160px;
+      margin: 8px;
+      background: #fff;
+      color: #0b0101;
+      border: 2px solid #f3f6f0;
+      box-shadow: 2px 2px 8px #ffffff;
+    }
+
+    .emotions-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .emotion-img, #advice-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 8px;
+    }
+
+    .advice {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      color: #ffffff;
+    }
+
+    .back-btn {
+      background: #c2b7f7;
+    }
+
+    .back-btn:hover {
+      background: #7c6ee6;
+    }
+
+    @media (max-width: 768px) {
+      h1, h2 {
+        font-size: 1.6rem;
+      }
+
+      .emotion-btn {
+        width: 44%;
+        height: 140px;
+        font-size: 0.9rem;
+      }
+
+      .button, .back-btn {
+        font-size: 1rem;
+        padding: 12px 18px;
+      }
+
+      .advice {
+        font-size: 1.2rem;
+        padding: 0 10px;
+      }
+
+      img[alt="Sanrio GIF"] {
+        width: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1: Start -->
+  <div id="start-page" class="page active">
+    <img src="thank-you.gif">
+    <img src="heronic-pixel.gif" alt="Sanrio GIF" style="width:200px;">
+    <h1>Welcome to Feels Land</h1>
+    <button class="button" onclick="goToPage('emotion-page')">Press Me</button>
+    <br><br>
+    <p>for div</p>
+  </div>
+
+  <!-- Page 2: Emotion Selection -->
+  <div id="emotion-page" class="page">
+    <img src="8bit-16bit.gif">
+    <h2>How are you feeling?</h2>
+    <div class="emotions-container">
+      <button class="emotion-btn" onclick="showAdvice(0)">
+        <img src="fiv.png" alt="Sleepy" class="emotion-img">
+        Sleepy
+      </button>
+      <button class="emotion-btn" onclick="showAdvice(1)">
+        <img src="fiv2.png" alt="Sad" class="emotion-img">
+        Sad
+      </button>
+      <button class="emotion-btn" onclick="showAdvice(2)">
+        <img src="fiv8.png" alt="Tired" class="emotion-img">
+        Tired
+      </button>
+      <button class="emotion-btn" onclick="showAdvice(3)">
+        <img src="fiv3.png" alt="Happy" class="emotion-img">
+        Happy
+      </button>
+      <button class="emotion-btn" onclick="showAdvice(4)">
+        <img src="fiv7.png" alt="Angry" class="emotion-img">
+        Angry
+      </button>
+      <button class="emotion-btn" onclick="showAdvice(5)">
+        <img src="fiv5.png" alt="Excited" class="emotion-img">
+        Excited
+      </button>
+      <button class="emotion-btn" onclick="showAdvice(6)">
+        <img src="fiv6.png" alt="Scared" class="emotion-img">
+        Scared
+      </button>
+      <button class="emotion-btn" onclick="showAdvice(7)">
+        <img src="fiv4.png" alt="bored" class="emotion-img">
+        bored
+      </button>
+    </div>
+    <button class="back-btn" onclick="goToPage('start-page')">Back</button>
+  </div>
+
+  <!-- Page 3: Advice Page -->
+  <div id="advice-page" class="page">
+    <h2 id="emotion-title"></h2>
+    <img id="advice-img" src="" alt="Emotion Character">
+    <div class="advice" id="advice-text"></div>
+    <button class="back-btn" onclick="goToPage('emotion-page')">Back</button>
+  </div>
+
+  <script>
+    const emotions = [
+      ["Sleepy", "fiv11.png", [
+        "You’ve done what you could. That’s enough for today.",
+        "Try closing your eyes for a few minutes.",
+        "Maybe it's time for a cozy blanket!",
+        "It’s okay to pause. The world will still be there when you wake up.",
+        "Go get some rest, sleepyhead."
+      ]],
+      ["Sad", "fiv12.png", [
+        "Talk to your loved one.",
+        "It's okay to feel sad sometimes.",
+        "It’ll pass when it’s ready.",
+        "It'll be alright. Just let it pass.",
+        "It won’t stay like this forever, even if it feels like it."
+      ]],
+      ["Tired", "fiv14.png", [
+        "Close your eyes for a moment — let the world dim a little.",
+        "Take rest. You need it.",
+        "The world can wait. You come first tonight.",
+        "Nothing has to make sense right now. Just rest.",
+        "Doing nothing is sometimes the most important thing."
+      ]],
+      ["Happy", "fiv13.png", [
+        "You don’t need a reason to be happy — being alive is reason enough.",
+        "Remember this feeling. Bottle it up.",
+        "you're glowing",
+        "Right now, you're building memories your future self will smile at.",
+        "You deserve this joy & everything else."
+      ]],
+      ["Angry", "fiv17.png", [
+        "It's alr, just breathe.",
+        "It's okayyy bro chill!",
+        "Go for a walk. It really helps to cool down.",
+        "You wouldn’t feel this much if you didn’t care that deeply.",
+        "It’s okay to be angry — it means something mattered to you."
+      ]],
+      ["Excited", "fiv15.png", [
+        "This feeling? Hold onto it. Let it fill you up.",
+        "Tell someone. Excitement multiplies when it’s shared.",
+        "You don’t need a reason to feel this good. Just enjoy it.",
+        "Breathe in. You’re allowed to be this happy.",
+        "Pause here. This is the good part."
+      ]],
+      ["Scared", "fiv16.png", [
+        "Picture the calm after a long day, when everything slows down.",
+        "Imagine your favorite place, even if it’s made up.",
+        "Close your eyes. Picture someone who makes you feel calm.",
+        "Think of a time someone made you laugh.",
+        "Think of a happy memory."
+      ]],
+      ["bored", "fiv18.png", [
+        "Open your notes app and write whatever’s on your mind.",
+        "Make a list of things you loved as a kid.",
+        "You’re not doing anything wrong — it’s just a quiet moment.",
+        "Try staring out the window for 2 minutes. Just watch.",
+        "Listen to kanye"
+      ]]
+    ];
+
+    function goToPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function showAdvice(i) {
+      document.getElementById('emotion-title').textContent = emotions[i][0];
+      document.getElementById('advice-img').src = emotions[i][1];
+      document.getElementById('advice-img').alt = emotions[i][0];
+
+      const comments = emotions[i][2];
+      const randomIndex = Math.floor(Math.random() * comments.length);
+      document.getElementById('advice-text').textContent = comments[randomIndex];
+
+      goToPage('advice-page');
+    }
+  </script>
+</body>
+</html>
